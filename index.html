@@ -2,24 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ESP Firmware Server</title>
-    <style>
-        body { font-family: sans-serif; text-align: center; padding: 50px; background: #f4f4f4; }
-        .container { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); display: inline-block; }
-        .btn { background: #007bff; color: white; padding: 15px 25px; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 20px; }
-        .btn:hover { background: #0056b3; }
-    </style>
+    <title>ESP Firmware Download</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Firmware Update</h1>
-        <p>Current Version: <strong>v1.0.0</strong></p>
-        <hr>
-        <a href="1000.bin" class="btn">Download .bin for ESP</a>
-        <p style="font-size: 0.8em; color: #666; margin-top: 10px;">
-            Right-click and "Copy link address" to use in your Arduino code.
-        </p>
-    </div>
+    <p>Downloading firmware... if it doesn't start, 
+       <a id="downloadLink" href="1000.bin" download="1000.bin">click here</a>.
+    </p>
+
+    <script>
+        // This runs as soon as the page loads
+        window.onload = function() {
+            const link = document.getElementById('downloadLink');
+            link.click();
+        };
+    </script>
 </body>
 </html>
